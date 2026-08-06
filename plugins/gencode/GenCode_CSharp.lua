@@ -4,24 +4,9 @@ local CreateTemplate = [[
             return UIPackage.CreateObject(UIPackageName, UIResName);
         }
 
-        private static void CreateGObjectAsync(UIPackage.CreateObjectCallback result)
-        {
-            UIPackage.CreateObjectAsync(UIPackageName, UIResName, result);
-        }
-
         public static {className} CreateInstance()
         {
             return Create(CreateGObject());
-        }
-
-        public static UniTask<{className}> CreateInstanceAsync(Entity domain)
-        {
-            UniTaskCompletionSource<{className}> tcs = new UniTaskCompletionSource<{className}>();
-            CreateGObjectAsync((go) =>
-            {
-                tcs.TrySetResult(Create(go));
-            });
-            return tcs.Task;
         }
 ]]
 
@@ -29,9 +14,7 @@ local CreateTemplate = [[
 local FUITemplate = [[
 #if ENABLE_UI_FAIRYGUI
 using FairyGUI;
-using Cysharp.Threading.Tasks;
 using FairyGUI.Utils;
-using GameFrameX.Entity.Runtime;
 using GameFrameX.UI.Runtime;
 using GameFrameX.UI.FairyGUI.Runtime;
 using GameFrameX.Runtime;
