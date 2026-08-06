@@ -39,6 +39,7 @@ using UnityEngine;
 
 namespace {namespaceName}
 {
+    [OptionUIConfig(UIPackageName)]
     public sealed partial class {className} : FUI
     {
         public const string UIPackageName = "{codePkgName}";
@@ -103,12 +104,11 @@ __AWAKE__
             base.Dispose();
             self.Remove();
 __DISPOSE__
-            self = null;            
+            self = null;
         }
 
         private {className}(GObject gObject) : base(gObject)
         {
-            // Awake(gObject);
         }
     }
 }
@@ -168,6 +168,12 @@ end
 local function genCode(handler)
     local settings = handler.project:GetSettings("Publish").codeGeneration -- 获取发布设置中的代码生成选项
     local codePkgName = handler:ToFilename(handler.pkg.name); -- 将包名转换为文件名格式（拼音），去除特殊字符等
+
+    -- 判断codePkgName必须以UI开头
+    if not string.match(codePkgName, "^UI%a+$") then
+        error(string.format("包名 '%s' 必须以'UI'开头并且只能包含字母的大写驼峰命名", codePkgName))
+    end
+
     ---@type string
     local exportCodePath = handler.exportCodePath; -- 导出代码路径
     -- 规范化路径
@@ -195,6 +201,27 @@ local function genCode(handler)
     local writer = CodeWriter.new() -- 代码写入器
     for i = 0, classCnt - 1 do
         local classInfo = classes[i] -- 获取类信息
+        
+        -- 检查className是否以"UI"开头并只包含字母
+        if not string.match(classInfo.className, "^UI%a+$") then
+            error(string.format("组件名称 '%s' 必须以'UI'开头并且只能包含字母的大写驼峰命名", classInfo.className))
+        end
+
+        -- 检查className是否以codePkgName开头
+        if not string.match(classInfo.className, "^" .. codePkgName .. "%a*$") then
+            error(string.format("组件名称 '%s' 必须以'%s'开头", classInfo.className, codePkgName))
+        end
+
+        local com_width = classInfo.res.width
+        local com_height = classInfo.res.height
+        -- 检查宽度和高度是否为偶数
+        if com_width % 2 ~= 0 then
+            error(string.format("类 '%s' 的宽度必须为偶数，当前宽度为: %d", classInfo.className, com_width))
+        end
+        if com_height % 2 ~= 0 then
+            error(string.format("类 '%s' 的高度必须为偶数，当前高度为: %d", classInfo.className, com_height))
+        end
+
         local members = classInfo.members -- 成员变量
         local memberInfoExported = classInfo.res.exported; -- 成员信息是否导出
         writer:reset() -- 重置写入器
@@ -228,6 +255,28 @@ local function genCode(handler)
             local typeName = memberInfo.type -- 类型名称
             local varName = memberInfo.varName -- 变量名
             local memberInfoName = memberInfo.name; -- 成员信息名称
+            if memberInfo.res ~= nil then
+                local width = memberInfo.res.width -- 宽度
+                local height = memberInfo.res.height -- 高度
+                -- 检查宽度和高度是否为偶数
+                if width % 2 ~= 0 then
+                    error(string.format("类 '%s' 中的成员 '%s' 的宽度必须为偶数，当前宽度为: %d", classInfo.className, memberInfoName, width))
+                end
+                if height % 2 ~= 0 then
+                    error(string.format("类 '%s' 中的成员 '%s' 的高度必须为偶数，当前高度为: %d", classInfo.className, memberInfoName, height))
+                end
+            end
+
+            if memberInfo.group ~= 1 then
+                -- 判断不是Controller
+                -- 排除特殊名称
+                if memberInfoName ~= "closeButton" and memberInfoName ~= "dragArea" and memberInfoName ~= "contentArea" then
+                    if memberInfoName ~= string.lower(memberInfoName) then
+                        error(string.format("类 '%s' 中的成员名称 '%s' 必须使用小写字母+下划线分割的方式命名", classInfo.className, memberInfoName))
+                    end
+                end
+            end
+
             -- 这里查找组件是否是其他包里的资源
             local isWhetherToCrossPackages = false; -- 是否跨包引用
             if memberInfo.res ~= nil then
