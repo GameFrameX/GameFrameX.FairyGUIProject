@@ -8,7 +8,7 @@
 [![Version](https://img.shields.io/github/v/release/GameFrameX/GameFrameX.FairyGUIProject)](https://github.com/GameFrameX/GameFrameX.FairyGUIProject/releases)
 [![Documentation](https://img.shields.io/badge/Documentation-doc.alianblank.com-blue)](https://gameframex.doc.alianblank.com)
 
-All-in-One Solution for Indie Game Development · Empowering Indie Developers' Dreams
+An all-in-one front-and-back-end solution for indie games · The dream-maker for indie game developers
 
 <br />
 
@@ -20,143 +20,248 @@ All-in-One Solution for Indie Game Development · Empowering Indie Developers' D
 
 </div>
 
-## Project Overview
+## What is this project?
 
-GameFrameX FairyGUI Project is the FairyGUI editor source project that owns every UI package for the GameFrameX Unity client. It is authored in the FairyGUI editor and published as `.bytes` asset bundles together with generated binding code into the sibling Unity project.
+In plain words: **this is the "design source file" for every game screen in GameFrameX.**
 
-- Design resolution: 1080 x 2160 (portrait), `MatchWidthOrHeight` scaling.
-- Project file: `Game.fairy` (FairyGUI editor, Unity target, version 5.0).
+Think of it as a Figma file — except instead of web design mockups, it holds game screens (login screens, main menus, inventories, loading screens…). You open it with a free tool called the **FairyGUI editor**, drag and drop to lay out a screen, then click a button and the screen gets exported into something Unity can use directly.
 
-### Features
+After exporting you get two things:
 
-- Nine UI packages covering the full game flow:
-  - `UILauncher` - splash / launch screen
-  - `UILoading` - loading scene
-  - `UILogin` - login screen
-  - `UIMain` - main HUD
-  - `UIBag` - inventory
-  - `UIRoom` - room / lobby
-  - `UIPlayer` - player panel
-  - `UICommon` - shared components
-  - `UICommonAvatar` - shared avatars
-- Three package groups for publishing: `UI`, `Res`, `Def` (see `settings/PackageGroup.json`).
-- One-click publish: `.bytes` bundles to `../Unity/Assets/Bundles/UI`, generated binding code to `../Unity/Assets/Hotfix/UI/FairyGUI/` (member prefix `m_`, get-by-name).
-- Shared design tokens: color scheme, font sizes, default font and vertical scrollbar (`settings/Common.json`).
-- Atlas settings tuned for mobile: 2048 max, paging, power-of-two, allow rotation, trim images (`settings/Publish.json`).
+- **An art asset bundle** (a `.bytes` file): the images and animations used by the screen, loaded by Unity at runtime.
+- **C# binding code**: for every button, list, and slider in the screen, a typed property is generated. That way programmers can write `loginPanel.btn_start.onClick = ...` instead of looking up widgets by string.
+
+You don't have to write the C# by hand — the plugin generates it for you automatically.
 
 ## Quick Start
 
-Prerequisites: FairyGUI editor 5.0 or newer (the version this project was authored with).
+The whole flow in one breath is 4 steps:
 
-1. Open `Game.fairy` in the FairyGUI editor.
-2. Browse and edit the UI packages under `assets/`.
-3. Use the editor's publish command to emit `.bytes` bundles and binding code into the sibling Unity project.
+1. **Open** `Game.fairy` in the FairyGUI editor.
+2. **Edit** a screen — say, change the text of the login button.
+3. **Click Publish**. Two things appear in the sibling Unity project:
+   - `../Unity/Assets/Bundles/UI/*.bytes` — the art assets
+   - `../Unity/Assets/Hotfix/UI/FairyGUI/.../*.cs` — the binding code
+4. **Use it in Unity**: call `UILoginPanel.CreateInstance()` and the screen shows up.
 
-### Installation
+Below we walk through each step with concrete examples. Let's start with prerequisites.
 
-This is a FairyGUI editor source project, not a Unity UPM package, so it is set up by cloning rather than through the Unity Package Manager.
+## Prerequisites (what you need)
 
-1. Clone the repository:
-   ```bash
-   git clone git@github.com:GameFrameX/GameFrameX.FairyGUIProject.git
-   ```
-2. Place it as a sibling of your Unity project so that the configured publish paths resolve:
-   ```
-   <workspace>/
-   ├── GameFrameX.FairyGUIProject/   <- this repo (contains Game.fairy)
-   └── Unity/                         <- Unity project (receives Assets/Bundles/UI)
-   ```
-   The publish targets are `../Unity/Assets/Bundles/UI` for bundles and `../Unity/Assets/Hotfix/UI/FairyGUI/` for generated code (see `settings/Publish.json`).
-3. Open `Game.fairy` in the FairyGUI editor and publish.
+| Tool | Purpose | Where to get it |
+|------|---------|-----------------|
+| FairyGUI editor ≥ 5.0 | The design tool to open and edit this project | https://www.fairygui.com/ |
+| A Unity project | Receives the exported asset bundles and code | Place it as a sibling of this repo |
 
-## Usage Examples
+> This is not a Unity plugin package — you can't install it through Unity Package Manager. Just clone the repo and drop it in the same parent folder as your Unity project:
+> ```
+> git clone git@github.com:GameFrameX/GameFrameX.FairyGUIProject.git
+> ```
+> The folder layout looks like this:
+> ```
+> <workspace>/
+> ├── GameFrameX.FairyGUIProject/   ← this repo (open Game.fairy here)
+> └── Unity/                         ← your Unity game (receives export output)
+> ```
 
-Package layout under `assets/`:
+## Step 1 — Open the project
 
-| Package | Purpose |
-|---------|---------|
-| `UILauncher` | Splash / launch screen |
-| `UILoading` | Loading scene |
-| `UILogin` | Login screen |
-| `UIMain` | Main HUD |
-| `UIBag` | Inventory |
-| `UIRoom` | Room / lobby panel |
-| `UIPlayer` | Player panel |
-| `UICommon` | Shared components |
-| `UICommonAvatar` | Shared avatars |
+1. Install the FairyGUI editor (5.0 or above).
+2. Double-click **`Game.fairy`** in this repo.
+3. Once the editor opens, the left panel shows **9 UI packages**.
 
-Publish output (consumed by the sibling Unity project):
+> **Example:** Click `UILogin` and you'll see the login screen design: a background image, an account input, a password input, and a "Sign In" button.
+
+The project is already pre-configured with these (usually you don't need to touch them):
+
+- Resolution 1080 × 2160 (portrait phone), scale mode `MatchWidthOrHeight`.
+- Shared fonts, colors, and scrollbars, all centralized in `settings/Common.json` and used globally.
+- Atlas settings: 2048 max size, paging, power-of-two, allow rotation, trim images (`settings/Publish.json`), tuned for mobile.
+- Publishing is split into three bundle groups: `UI` / `Res` / `Def` (`settings/PackageGroup.json`).
+
+## Step 2 — Understand the packages
+
+A **Package** is like a folder that groups a related set of screens together with the art assets they use. This project has 9 packages:
+
+| Package | What it is | Typical screens inside |
+|---------|------------|------------------------|
+| `UILauncher` | Splash screen | Logo at game start |
+| `UILoading` | Loading screen | Progress bar while assets load |
+| `UILogin` | Login screen | Account / password / login button |
+| `UIMain` | Main HUD | Top bar and menu after login |
+| `UIBag` | Inventory | Item grid |
+| `UIRoom` | Room / lobby | Room list, ready button |
+| `UIPlayer` | Player panel | Avatar, attributes |
+| `UICommon` | Common components | Buttons reused everywhere |
+| `UICommonAvatar` | Common avatar | Avatar widget |
+
+> **Tip:** The names all start with `UI` — that's not a coincidence, it's required by the publish rules (see "Naming rules" below).
+
+## Step 3 — Edit a screen
+
+> **Example: rename the login button.**
+>
+> 1. Open the `UILogin` package → double-click the `UILoginPanel` component.
+> 2. Select the login button, then in the properties panel on the right, change its text from `登录` to `Sign In`.
+> 3. Save (Ctrl+S). Done.
+
+Remember: design changes here are purely visual **until you publish** — they don't affect the Unity project yet.
+
+## Step 4 — Publish (export)
+
+This is where the magic happens.
+
+1. In the editor run **File → Publish** (or click the publish button on the toolbar).
+2. In the publish dialog, make sure **"Generate Code"** is checked.
+3. The editor writes the files into the sibling Unity project:
 
 ```
-../Unity/Assets/Bundles/UI/*.bytes      # UI asset bundles
-../Unity/Assets/Hotfix/UI/FairyGUI/     # generated binding code (m_ prefix, get-by-name)
+../Unity/Assets/Bundles/UI/           ← *.bytes art asset bundles
+../Unity/Assets/Hotfix/UI/FairyGUI/   ← generated C# binding code
 ```
 
-## Code Generation Plugin Rules
+> **What the plugin does behind the scenes:** at publish time the code-gen plugin under `plugins/gencode/` runs. It reads every component marked "export", generates a `.cs` file per component, plus an extra `PackageXxx.cs`.
 
-The publish step runs the bundled code-generation plugin at `plugins/gencode/` (`package.json` → `main.lua` → `GenCode_CSharp.lua`). It scans every exported component in a package and emits C# binding code into the sibling Unity project. The rules below are **enforced at publish time** — breaking any one aborts the publish with an error.
+> **Note:** If a component isn't marked "export", or you forgot to check "Generate Code" when publishing, no C# is generated — this is the most common trap for newcomers (see the FAQ).
 
-> Plugin entry: `onPublish` in `main.lua`. It creates a `{PackageName}` folder under the export path, runs only when "Generate Code" is enabled, and suppresses FairyGUI's default code output.
+## Step 5 — What the generated C# looks like
 
-### Naming (enforced)
+After publishing `UILogin`, you'll get a file that looks something like this (simplified, unrelated details omitted):
 
-| Subject | Rule | Example |
-|---------|------|---------|
-| Package name | Starts with `UI`, letters only (PascalCase) | `UILogin` ✅ · `Login` / `UI_Login` / `UI1` ❌ |
-| Component name | Starts with `UI`, letters only | `UILoginPanel` ✅ |
-| Component prefix | Must start with its own package name | In `UILogin`: `UILoginPanel` ✅ · `UIMainPanel` ❌ |
-| Member name | All-lowercase (lowercase + underscore). Exempt: Controllers and the reserved names `closeButton`, `dragArea`, `contentArea` | `btn_start` ✅ · `BtnStart` ❌ |
+```csharp
+#if ENABLE_UI_FAIRYGUI
+namespace Hotfix.UI
+{
+    public sealed partial class UILoginPanel : FUI
+    {
+        public const string UIPackageName = "UILogin";
+        public const string UIResName = "UILoginPanel";
 
-### Dimensions (enforced)
+        public GButton btn_start { get; private set; }    // auto-bound
+        public GTextField txt_title { get; private set; } // auto-bound
 
-- Component width **and** height must both be **even**.
-- Every member that has a resource: width **and** height must both be **even**.
+        public static UILoginPanel CreateInstance() { /* creates and returns an instance */ }
 
-### Code generation behavior
-
-- Only components marked **"Exported"** in the editor get the static factory methods `CreateInstance()` and `CreateInstanceAsync(Entity)` (async returns a `UniTask`).
-- Members bind by group:
-  - Object → `com.GetChild("name")`; if the type is a custom component, it is wrapped as `Xxx.Create(...)`.
-  - Controller → `com.GetController("name")`.
-  - Transition → `com.GetTransition("name")`.
-- Cross-package reference: when a member points at a resource owned by another package and its type is a custom component, the generated type name is replaced with that cross-package resource name.
-- Members whose type name contains `Scene` are auto-disposed (`Dispose()`) and nulled in `Dispose()`.
-- Namespace: defaults to `Hotfix.UI`; switches to `Unity.Startup` when the export path contains `Unity/Assets/Scripts`.
-
-### Output layout
-
-```
-{exportCodePath}/{PackageName}/Components/
-├── {ComponentName}.cs       # one per exported component (partial sealed class : FUI)
-└── Package{PackageName}.cs  # FUIPackage static class with the package-name constant
+        protected override void InitView()
+        {
+            btn_start  = (GButton)com.GetChild("btn_start");
+            txt_title  = (GTextField)com.GetChild("txt_title");
+        }
+    }
+}
+#endif
 ```
 
-### Compile guard & dependencies
+So a programmer in Unity can use it like this:
 
-- All generated code is wrapped in `#if ENABLE_UI_FAIRYGUI`.
-- Referenced assemblies: FairyGUI, UniTask (`Cysharp.Threading.Tasks`), GameFrameX (`Entity.Runtime`, `UI.Runtime`, `UI.FairyGUI.Runtime`, `Runtime`).
+```csharp
+var panel = UILoginPanel.CreateInstance();                   // show the login screen
+panel.btn_start.onClick.Add(() => Debug.Log("Login clicked")); // fired on click
+```
+
+No string lookups, no typos — every named widget automatically becomes a typed property.
+
+## Naming & size rules (enforced at publish)
+
+The plugin **checks every package at publish time**. Breaking any rule stops the publish and throws an error. These rules exist to keep the generated code clean and consistent.
+
+Each rule below comes with a "right / wrong" side-by-side and shows what the error looks like.
+
+### Rule 1: Package names must start with `UI` and contain only letters
+
+| ✅ Right | ❌ Wrong | Why it fails |
+|----------|---------|--------------|
+| `UILogin` | `Login` | No `UI` prefix |
+| `UIBag` | `UI_Login` | Underscore not allowed |
+| `UIPlayer` | `UI1` | Digits not allowed |
+
+On violation the plugin reports: `包名 'xxx' 必须以'UI'开头并且只能包含字母的大写驼峰命名` (i.e. the package name must start with `UI` and use only PascalCase letters).
+
+### Rule 2: Component names must start with `UI` and contain only letters
+
+| ✅ Right | ❌ Wrong | Why it fails |
+|----------|---------|--------------|
+| `UILoginPanel` | `LoginPanel` | No `UI` prefix |
+| `UIBagItem` | `UILogin_Panel` | Underscore not allowed |
+
+### Rule 3: Component names must start with the name of their package
+
+Components live inside a package, so they carry the package name as a prefix.
+
+| Owning package | ✅ Right | ❌ Wrong | Why it fails |
+|----------------|----------|---------|--------------|
+| `UILogin` | `UILoginPanel` | `UIMainPanel` | Prefix should be `UILogin` |
+| `UIBag` | `UIBagItem` | `UILoginItem` | Prefix should be `UIBag` |
+
+### Rule 4: Member names must be all lowercase (lowercase letters + underscores)
+
+Every control name (variable name) you assign inside a screen must be all lowercase. **Exception**: Controller is unrestricted, and the three reserved names `closeButton`, `dragArea`, and `contentArea` may also use camelCase.
+
+| ✅ Right | ❌ Wrong | Why it fails |
+|----------|---------|--------------|
+| `btn_start` | `BtnStart` | Contains uppercase letters |
+| `txt_title` | `txtTitle` | Contains uppercase letters |
+| `list_items` | `listItems` | Contains uppercase letters |
+
+### Rule 5: Width and height must both be even
+
+Every exported component, and every member with art assets, must have even width and height.
+
+| ✅ Right | ❌ Wrong | Why it fails |
+|----------|---------|--------------|
+| 1080 × 1920 | 1081 × 1920 | Width is odd |
+| 200 × 80 | 200 × 81 | Height is odd |
+
+> **Why even?** So that pixel-center alignment and atlas packing on mobile line up exactly, avoiding half-pixel blur.
+
+### What the plugin does automatically (you don't have to worry about it)
+
+- Only components marked **"export"** get factory methods `CreateInstance()` / `CreateInstanceAsync()` generated.
+- Members are auto-bound by type: regular objects via `GetChild`, Controller via `GetController`, Transition via `GetTransition`; for custom components, it wraps them with `Xxx.Create(...)`.
+- Cross-package custom components automatically use their original package's real type name.
+- Members whose type name contains `Scene` automatically have `Dispose()` called on release.
+- Generated-code namespace: default is `Hotfix.UI`; if the export path contains `Unity/Assets/Scripts`, it switches to `Unity.Startup`.
+- All generated code is wrapped in `#if ENABLE_UI_FAIRYGUI` so it can be toggled on/off inside Unity.
+
+## Troubleshooting (FAQ)
+
+**Q: Publish errors with "package name must start with UI".**
+A: Rename the package so it starts with `UI` and uses only letters, e.g. `UIBoss`.
+
+**Q: Publish errors with "width must be even".**
+A: Open the component and set both width and height to even numbers (properties panel on the right → size).
+
+**Q: No C# code was generated after publishing.**
+A: Usually one of two reasons: (1) you forgot to check "Generate Code" in the publish dialog; (2) the component wasn't marked as "export" in the editor.
+
+**Q: I clearly named a control, but it doesn't appear in the generated code.**
+A: Its name probably contains uppercase letters. Rename it to all lowercase (see Rule 4).
+
+**Q: I want to add a new screen — what's the recipe?**
+A: (1) Create a package starting with `UI`, or reuse an existing one; (2) inside the package, create a component whose name starts with `UI` + the package name; (3) give every control you'll use an all-lowercase name; (4) mark the component as "export"; (5) set width and height to even numbers; (6) publish.
 
 ## Dependencies
 
-- FairyGUI editor >= 5.0 (authoring tool).
-- A sibling Unity project that consumes the published `.bytes` bundles and generated binding code.
+- FairyGUI editor ≥ 5.0 (the design tool).
+- A sibling Unity project, to receive the exported asset bundles and code.
+- On the Unity side you need: FairyGUI runtime, UniTask, GameFrameX (`Entity.Runtime`, `UI.Runtime`, `UI.FairyGUI.Runtime`, `Runtime`).
 
 ## Documentation & Resources
 
-- Official Documentation: https://gameframex.doc.alianblank.com
+- Official docs: https://gameframex.doc.alianblank.com
 - GitHub Releases: https://github.com/GameFrameX/GameFrameX.FairyGUIProject/releases
-- FairyGUI Official Site: https://www.fairygui.com/
+- FairyGUI official site: https://www.fairygui.com/
 
 ## Community & Support
 
-- QQ Groups: 467608841 / 233840761
+- QQ groups: 467608841 / 233840761
 
 ## Changelog
 
-See [GitHub Releases](https://github.com/GameFrameX/GameFrameX.FairyGUIProject/releases) for the full changelog.
+See the full changelog at [GitHub Releases](https://github.com/GameFrameX/GameFrameX.FairyGUIProject/releases).
 
-The initial release ships the FairyGUI project skeleton together with the first batch of UI asset packages.
+The initial release ships the FairyGUI project skeleton and the first batch of UI asset packages.
 
 ## License
 
-See [LICENSE.md](LICENSE.md) for license information.
+See the [LICENSE.md](LICENSE.md) file.
