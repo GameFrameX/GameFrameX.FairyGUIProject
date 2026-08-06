@@ -92,6 +92,50 @@ GameFrameX FairyGUI Project は、GameFrameX Unity クライアントのすべ�
 ../Unity/Assets/Hotfix/UI/FairyGUI/     # 生成されたバインディングコード（m_ プレフィックス、名前で取得）
 ```
 
+## コード生成プラグインのルール
+
+公開ステップはバンドル済みのコード生成プラグイン `plugins/gencode/`（`package.json` → `main.lua` → `GenCode_CSharp.lua`）を実行します。各パッケージの「エクスポート」指定コンポーネントをスキャンし、C# バインディングコードを同級の Unity プロジェクトへ生成します。以下のルールは**公開時に強制検証**され、いずれかを満たさないと公開がエラーで中断します。
+
+> プラグイン入口：`main.lua` の `onPublish`。エクスポートパス下に `{パッケージ名}` フォルダを作成し、「コード生成」が有効なときのみ実行して FairyGUI のデフォルト出力を抑制します。
+
+### 命名（強制）
+
+| 対象 | ルール | 例 |
+|------|--------|------|
+| パッケージ名 | `UI` 先頭、英字のみ（パスカルケース） | `UILogin` ✅ · `Login` / `UI_Login` / `UI1` ❌ |
+| コンポーネント名 | `UI` 先頭、英字のみ | `UILoginPanel` ✅ |
+| コンポーネントの接頭辞 | 自パッケージ名で始まること | `UILogin` 内：`UILoginPanel` ✅ · `UIMainPanel` ❌ |
+| メンバー名 | 全小文字（小文字 + アンダースコア）。ただし Controller と予約名 `closeButton`、`dragArea`、`contentArea` は除外 | `btn_start` ✅ · `BtnStart` ❌ |
+
+### サイズ（強制）
+
+- コンポーネントの幅**と**高さはともに**偶数**であること。
+- リソースを持つ各メンバー：幅**と**高さはともに**偶数**であること。
+
+### コード生成の挙動
+
+- エディタで「エクスポート」指定したコンポーネントのみ、静的ファクトリメソッド `CreateInstance()` と `CreateInstanceAsync(Entity)`（非同期は `UniTask` を返す）が生成されます。
+- メンバーは group に応じてバインドされます：
+  - オブジェクト → `com.GetChild("name")`。型がカスタムコンポーネントなら `Xxx.Create(...)` でラップ。
+  - Controller → `com.GetController("name")`。
+  - Transition → `com.GetTransition("name")`。
+- 別パッケージ参照：メンバーが別パッケージのリソースを指し、かつ型がカスタムコンポーネントの場合、生成される型名はその別パッケージのリソース名に置き換えられます。
+- 型名に `Scene` を含むメンバーは、`Dispose()` で自動的に `Dispose()` され null 代入されます。
+- 名前空間：デフォルトは `Hotfix.UI`。エクスポートパスに `Unity/Assets/Scripts` が含まれる場合は `Unity.Startup` になります。
+
+### 出力レイアウト
+
+```
+{エクスポートコードパス}/{パッケージ名}/Components/
+├── {コンポーネント名}.cs   # エクスポートコンポーネントごとに1つ（partial sealed class : FUI）
+└── Package{パッケージ名}.cs  # パッケージ名定数を持つ FUIPackage 静的クラス
+```
+
+### コンパイルガードと依存
+
+- 生成コードはすべて `#if ENABLE_UI_FAIRYGUI` で囲まれます。
+- 参照アセンブリ：FairyGUI、UniTask（`Cysharp.Threading.Tasks`）、GameFrameX（`Entity.Runtime`、`UI.Runtime`、`UI.FairyGUI.Runtime`、`Runtime`）。
+
 ## 依存関係
 
 - FairyGUI エディタ 5.0 以上（作成ツール）。

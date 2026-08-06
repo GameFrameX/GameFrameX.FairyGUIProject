@@ -92,6 +92,50 @@ GameFrameX FairyGUI Project는 GameFrameX Unity 클라이언트의 모든 UI 패
 ../Unity/Assets/Hotfix/UI/FairyGUI/     # 생성된 바인딩 코드(m_ 접두어, 이름으로 가져오기)
 ```
 
+## 코드 생성 플러그인 규칙
+
+퍼블리시 단계는 번들된 코드 생성 플러그인 `plugins/gencode/`(`package.json` → `main.lua` → `GenCode_CSharp.lua`)를 실행합니다. 각 패키지의 "내보내기" 표시된 컴포넌트를 스캔하여 C# 바인딩 코드를 형제 Unity 프로젝트로 생성합니다. 아래 규칙은 **퍼블리시 시점에 강제 검증**되며, 어느 하나라도 위반하면 퍼블리시가 에러로 중단됩니다.
+
+> 플러그인 진입점: `main.lua`의 `onPublish`. 내보내기 경로 하위에 `{패키지명}` 폴더를 만들고, "코드 생성"이 켜져 있을 때만 실행되며 FairyGUI의 기본 코드 출력은 억제합니다.
+
+### 명명(강제)
+
+| 대상 | 규칙 | 예 |
+|------|------|------|
+| 패키지명 | `UI`로 시작, 영문자만(파스칼케이스) | `UILogin` ✅ · `Login` / `UI_Login` / `UI1` ❌ |
+| 컴포넌트명 | `UI`로 시작, 영문자만 | `UILoginPanel` ✅ |
+| 컴포넌트 접두사 | 소속 패키지명으로 시작해야 함 | `UILogin` 내: `UILoginPanel` ✅ · `UIMainPanel` ❌ |
+| 멤버명 | 모두 소문자(소문자 + 밑줄). 단, Controller와 예약명 `closeButton`, `dragArea`, `contentArea`는 제외 | `btn_start` ✅ · `BtnStart` ❌ |
+
+### 크기(강제)
+
+- 컴포넌트의 너비**와** 높이는 모두 **짝수**여야 합니다.
+- 리소스를 가진 각 멤버: 너비**와** 높이가 모두 **짝수**여야 합니다.
+
+### 코드 생성 동작
+
+- 에디터에서 "내보내기" 표시된 컴포넌트만 정적 팩토리 메서드 `CreateInstance()`와 `CreateInstanceAsync(Entity)`(비동기는 `UniTask` 반환)가 생성됩니다.
+- 멤버는 group에 따라 바인딩됩니다:
+  - 오브젝트 → `com.GetChild("name")`. 타입이 커스텀 컴포넌트면 `Xxx.Create(...)`로 래핑.
+  - Controller → `com.GetController("name")`.
+  - Transition → `com.GetTransition("name")`.
+- 타 패키지 참조: 멤버가 다른 패키지의 리소스를 가리키고 타입이 커스텀 컴포넌트면, 생성되는 타입명은 해당 타 패키지 리소스명으로 대체됩니다.
+- 타입명에 `Scene`이 포함된 멤버는 `Dispose()`에서 자동으로 `Dispose()`되고 null이 대입됩니다.
+- 네임스페이스: 기본 `Hotfix.UI`. 내보내기 경로에 `Unity/Assets/Scripts`가 포함되면 `Unity.Startup`으로 전환됩니다.
+
+### 출력 레이아웃
+
+```
+{내보내기 코드 경로}/{패키지명}/Components/
+├── {컴포넌트명}.cs       # 내보내기 컴포넌트마다 1개(partial sealed class : FUI)
+└── Package{패키지명}.cs  # 패키지명 상수를 가진 FUIPackage 정적 클래스
+```
+
+### 컴파일 가드와 의존성
+
+- 생성된 모든 코드는 `#if ENABLE_UI_FAIRYGUI`로 감싸집니다.
+- 참조 어셈블리: FairyGUI, UniTask(`Cysharp.Threading.Tasks`), GameFrameX(`Entity.Runtime`, `UI.Runtime`, `UI.FairyGUI.Runtime`, `Runtime`).
+
 ## 의존성
 
 - FairyGUI 에디터 5.0 이상(제작 도구).

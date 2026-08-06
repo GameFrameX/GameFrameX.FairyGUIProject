@@ -92,6 +92,50 @@ Publish output (consumed by the sibling Unity project):
 ../Unity/Assets/Hotfix/UI/FairyGUI/     # generated binding code (m_ prefix, get-by-name)
 ```
 
+## Code Generation Plugin Rules
+
+The publish step runs the bundled code-generation plugin at `plugins/gencode/` (`package.json` → `main.lua` → `GenCode_CSharp.lua`). It scans every exported component in a package and emits C# binding code into the sibling Unity project. The rules below are **enforced at publish time** — breaking any one aborts the publish with an error.
+
+> Plugin entry: `onPublish` in `main.lua`. It creates a `{PackageName}` folder under the export path, runs only when "Generate Code" is enabled, and suppresses FairyGUI's default code output.
+
+### Naming (enforced)
+
+| Subject | Rule | Example |
+|---------|------|---------|
+| Package name | Starts with `UI`, letters only (PascalCase) | `UILogin` ✅ · `Login` / `UI_Login` / `UI1` ❌ |
+| Component name | Starts with `UI`, letters only | `UILoginPanel` ✅ |
+| Component prefix | Must start with its own package name | In `UILogin`: `UILoginPanel` ✅ · `UIMainPanel` ❌ |
+| Member name | All-lowercase (lowercase + underscore). Exempt: Controllers and the reserved names `closeButton`, `dragArea`, `contentArea` | `btn_start` ✅ · `BtnStart` ❌ |
+
+### Dimensions (enforced)
+
+- Component width **and** height must both be **even**.
+- Every member that has a resource: width **and** height must both be **even**.
+
+### Code generation behavior
+
+- Only components marked **"Exported"** in the editor get the static factory methods `CreateInstance()` and `CreateInstanceAsync(Entity)` (async returns a `UniTask`).
+- Members bind by group:
+  - Object → `com.GetChild("name")`; if the type is a custom component, it is wrapped as `Xxx.Create(...)`.
+  - Controller → `com.GetController("name")`.
+  - Transition → `com.GetTransition("name")`.
+- Cross-package reference: when a member points at a resource owned by another package and its type is a custom component, the generated type name is replaced with that cross-package resource name.
+- Members whose type name contains `Scene` are auto-disposed (`Dispose()`) and nulled in `Dispose()`.
+- Namespace: defaults to `Hotfix.UI`; switches to `Unity.Startup` when the export path contains `Unity/Assets/Scripts`.
+
+### Output layout
+
+```
+{exportCodePath}/{PackageName}/Components/
+├── {ComponentName}.cs       # one per exported component (partial sealed class : FUI)
+└── Package{PackageName}.cs  # FUIPackage static class with the package-name constant
+```
+
+### Compile guard & dependencies
+
+- All generated code is wrapped in `#if ENABLE_UI_FAIRYGUI`.
+- Referenced assemblies: FairyGUI, UniTask (`Cysharp.Threading.Tasks`), GameFrameX (`Entity.Runtime`, `UI.Runtime`, `UI.FairyGUI.Runtime`, `Runtime`).
+
 ## Dependencies
 
 - FairyGUI editor >= 5.0 (authoring tool).

@@ -92,6 +92,50 @@ GameFrameX FairyGUI Project 是托管 GameFrameX Unity 客户端全部 UI 包的
 ../Unity/Assets/Hotfix/UI/FairyGUI/     # 生成的绑定代码（m_ 前缀，按名称获取）
 ```
 
+## 代码生成插件规则
+
+发布步骤会运行内置的代码生成插件 `plugins/gencode/`（`package.json` → `main.lua` → `GenCode_CSharp.lua`）。它会扫描每个包中标记为导出的组件，并将 C# 绑定代码生成到同级 Unity 工程。以下规则**在发布时强制校验**——违反任意一条都会中断发布并报错。
+
+> 插件入口：`main.lua` 中的 `onPublish`。它会在导出路径下创建 `{包名}` 子目录，仅当勾选「生成代码」时执行，并屏蔽 FairyGUI 的默认代码输出。
+
+### 命名（强制）
+
+| 对象 | 规则 | 示例 |
+|------|------|------|
+| 包名 | 以 `UI` 开头，仅含字母（大写驼峰） | `UILogin` ✅ · `Login` / `UI_Login` / `UI1` ❌ |
+| 组件名 | 以 `UI` 开头，仅含字母 | `UILoginPanel` ✅ |
+| 组件名前缀 | 必须以其所属包名开头 | 在 `UILogin` 中：`UILoginPanel` ✅ · `UIMainPanel` ❌ |
+| 成员名 | 全小写（小写字母 + 下划线）。豁免：Controller，以及保留名 `closeButton`、`dragArea`、`contentArea` | `btn_start` ✅ · `BtnStart` ❌ |
+
+### 尺寸（强制）
+
+- 组件的宽**与**高都必须为**偶数**。
+- 每个有资源的成员：宽**与**高都必须为**偶数**。
+
+### 代码生成行为
+
+- 只有在编辑器中标记为「导出」的组件，才会生成静态工厂方法 `CreateInstance()` 与 `CreateInstanceAsync(Entity)`（异步返回 `UniTask`）。
+- 成员按 group 绑定：
+  - 普通对象 → `com.GetChild("name")`；若类型为自定义组件，则用 `Xxx.Create(...)` 包裹。
+  - Controller → `com.GetController("name")`。
+  - Transition → `com.GetTransition("name")`。
+- 跨包引用：若成员指向其他包的资源，且类型为自定义组件，生成的类型名会替换为该跨包资源名。
+- 类型名包含 `Scene` 的成员，会在 `Dispose()` 中自动调用其 `Dispose()` 并置空。
+- 命名空间：默认 `Hotfix.UI`；当导出路径包含 `Unity/Assets/Scripts` 时改为 `Unity.Startup`。
+
+### 输出布局
+
+```
+{导出代码路径}/{包名}/Components/
+├── {组件名}.cs       # 每个导出组件一个（partial sealed class : FUI）
+└── Package{包名}.cs  # FUIPackage 静态类，含包名常量
+```
+
+### 编译宏与依赖
+
+- 所有生成代码都用 `#if ENABLE_UI_FAIRYGUI` 包裹。
+- 引用程序集：FairyGUI、UniTask（`Cysharp.Threading.Tasks`）、GameFrameX（`Entity.Runtime`、`UI.Runtime`、`UI.FairyGUI.Runtime`、`Runtime`）。
+
 ## 依赖
 
 - FairyGUI 编辑器 >= 5.0（创作工具）。
