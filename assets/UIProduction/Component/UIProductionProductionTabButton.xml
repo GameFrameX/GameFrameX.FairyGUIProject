@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="210,62" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n1_prod" name="up" src="prod11" fileName="image/production_tab_background.png" xy="0,0" size="209,62"/>
+    <text id="n2_prod" name="title" xy="71,16" size="73,31" fontSize="25" color="#7df1ef" align="center" vAlign="middle" autoSize="none" singleLine="true" text="生 产"/>
+  </displayList>
+  <Button mode="Check" downEffect="scale" downEffectValue="1.05"/>
+</component>

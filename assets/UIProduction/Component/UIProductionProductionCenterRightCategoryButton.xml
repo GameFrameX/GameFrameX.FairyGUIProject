@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="170,52" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n31_prod" name="production_center_right_category_border" src="prod1g" fileName="image/production_center_left_category_border.png" xy="1,1" size="168,50"/>
+    <image id="n32_prod" name="up" src="prod1h" fileName="image/production_center_left_category_background.png" xy="1,1" size="168,50"/>
+    <image id="n33_prod" name="production_center_right_category_decoration" src="prod1i" fileName="image/production_center_left_category_decoration.png" xy="12,19" size="15,15"/>
+    <text id="n34_prod" name="title" xy="58,14" size="60,25" fontSize="20" color="#7df1ef" align="center" vAlign="middle" autoSize="none" singleLine="true" text="生 产"/>
+  </displayList>
+  <Button mode="Check" downEffect="scale" downEffectValue="1.05"/>
+</component>

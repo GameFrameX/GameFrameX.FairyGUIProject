@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="40,40" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n45_prod" name="up" src="prod1p" fileName="image/decrease_background.png" xy="1,1" size="38,38"/>
+    <image id="n46_prod" name="icon" src="prod1q" fileName="image/decrease_symbol.png" xy="6,17" size="28,9"/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue="1.05"/>
+</component>

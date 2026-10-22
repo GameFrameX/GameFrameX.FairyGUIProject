@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,2160">
+  <displayList>
+    <image id="n160_prod" name="screen_background_part0" src="prod39" fileName="image/screen_background_p0.png" xy="0,0" size="1080,2048"/><image id="n161_prod" name="screen_background_part1" src="prod3a" fileName="image/screen_background_p1.png" xy="0,2048" size="1080,112"/>
+    <component id="n162_prod" name="back_button" src="prod8" fileName="Component/UIProductionBackButton.xml" xy="33,2012" size="100,100"/>
+    <component id="n163_prod" name="production_navigation_button" src="prod5" fileName="Component/UIProductionProductionNavigationButton.xml" xy="179,2011" size="270,104"/>
+    <component id="n164_prod" name="adventure_navigation_button" src="prod6" fileName="Component/UIProductionAdventureNavigationButton.xml" xy="483,2011" size="270,104"/>
+    <component id="n165_prod" name="training_navigation_button" src="prod7" fileName="Component/UIProductionTrainingNavigationButton.xml" xy="0,0" size="1080,2160" greyed="true"/>
+    <component id="n166_prod" name="production_tab_button" src="prod3" fileName="Component/UIProductionProductionTabButton.xml" xy="28,198" size="210,62"/>
+    <component id="n167_prod" name="production_lines_tab_button" src="prod4" fileName="Component/UIProductionProductionLinesTabButton.xml" xy="242,198" size="210,62"/>
+    <text id="n168_prod" name="screen_title_shadow" xy="439,59" size="185,89" fontSize="71" color="#0b163e" align="center" vAlign="middle" autoSize="none" singleLine="true" text="生产"/>
+    <text id="n169_prod" name="title" xy="446,52" size="185,89" fontSize="71" color="#c3d8ff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="生产"/>
+  </displayList>
+</component>

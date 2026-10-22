@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<packageDescription id="cfour1">
+<packageDescription id="cfour001">
   <resources>
     <component id="battl1" name="UIConnectFourBattlePanel.xml" path="/Scene/" exported="true"/>
     <component id="btn001" name="UIConnectFourButton.xml" path="/Widget/"/>

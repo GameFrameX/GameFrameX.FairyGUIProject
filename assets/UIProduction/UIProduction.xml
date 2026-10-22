@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,2160">
+  <controller name="tab" pages="0,生产,1,产线" selected="0"/><controller name="window" pages="0,隐藏,1,显示" selected="0"/>
+  <displayList>
+    <graph id="n170_prod" name="screen_base_image" xy="0,0" size="1080,2160" type="rect" lineSize="0" fillColor="#ffffffff"/>
+    <component id="n171_prod" name="screen_chrome" src="prod2" fileName="Component/UIProductionScreenChrome.xml" xy="0,0" size="1080,2160"/>
+    <component id="n172_prod" name="buildings_panel" src="prod9" fileName="Component/UIProductionBuildingsPanel.xml" xy="22,292" size="1036,1544"><gearDisplay controller="tab" pages="0"/></component>
+    <component id="n173_prod" name="production_lines_panel" src="prodg" fileName="Component/UIProductionProductionLinesPanel.xml" xy="22,292" size="1038,1334"><gearDisplay controller="tab" pages="1"/></component>
+    <graph id="n174_prod" name="modal_dim_overlay" xy="0,0" size="1080,2160" type="rect" lineSize="0" fillColor="#ff000000" alpha="0.702"><gearDisplay controller="window" pages="1"/></graph>
+    <component id="n175_prod" name="create_line_window_frame" src="prodo" fileName="Component/UIProductionCreateLineWindowFrame.xml" xy="85,531" size="910,1028"><gearDisplay controller="window" pages="1"/></component>
+    <component id="n176_prod" name="create_line_content" src="prodq" fileName="Component/UIProductionCreateLineContent.xml" xy="152,649" size="770,868"><gearDisplay controller="window" pages="1"/></component>
+  </displayList>
+</component>

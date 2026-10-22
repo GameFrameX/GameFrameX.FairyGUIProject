@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="770,868">
+  <displayList>
+    <component id="n130_prod" name="product_catalog" src="prodr" fileName="Component/UIProductionProductCatalog.xml" xy="0,117" size="770,750"/>
+    <text id="n131_prod" name="production_line_instructions" xy="39,0" size="691,29" fontSize="23" color="#2661c5" align="center" vAlign="middle" autoSize="none" singleLine="true" text="选择2级以上或产物，将会自动建立生产该产物生产线"/>
+    <text id="n132_prod" name="production_recipe_instructions" xy="121,37" size="526,28" fontSize="22" color="#2661c5" align="center" vAlign="middle" autoSize="none" singleLine="true" text="可以手动修改产出和中间产物的生产配方"/>
+  </displayList>
+</component>

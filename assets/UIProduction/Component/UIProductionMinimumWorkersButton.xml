@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="40,40" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n52_prod" name="up" src="prod1s" fileName="image/minimum_background.png" xy="1,1" size="38,38"/>
+    <text id="n53_prod" name="minimum_arrow_primary" xy="16,9" size="18,20" fontSize="16" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="&gt;"/>
+    <text id="n54_prod" name="minimum_arrow_secondary" xy="3,9" size="18,20" fontSize="16" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="&gt;"/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue="1.05"/>
+</component>

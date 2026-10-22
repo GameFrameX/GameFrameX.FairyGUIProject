@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,2160" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n11_prod" name="up" src="prod15" fileName="image/training_background.png" xy="789,2011" size="270,103"/>
+    <text id="n12_prod" name="training_title_shadow" xy="885,2039" size="99,49" fontSize="39" color="#233aa0" align="center" vAlign="middle" autoSize="none" singleLine="true" text="培养"/>
+    <text id="n13_prod" name="title" xy="880,2036" size="100,48" fontSize="38" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="培养"/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue="1.05"/>
+</component>

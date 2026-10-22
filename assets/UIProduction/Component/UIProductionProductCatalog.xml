@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="770,750">
+  <displayList>
+    <image id="n117_prod" name="catalog_outer_panel" src="prod2w" fileName="image/catalog_outer_panel.png" xy="1,1" size="766,747"/>
+    <image id="n118_prod" name="catalog_header_background" src="prod2x" fileName="image/catalog_header_background.png" xy="13,13" size="743,66"/>
+    <image id="n119_prod" name="catalog_body_background" src="prod2y" fileName="image/catalog_body_background.png" xy="9,10" size="750,730"/>
+    <image id="n120_prod" name="catalog_right_corner_decoration" src="prod2z" fileName="image/catalog_right_corner_decoration.png" xy="732,19" size="19,19"/>
+    <image id="n121_prod" name="catalog_left_corner_decoration" src="prod30" fileName="image/catalog_left_corner_decoration.png" xy="14,19" size="19,19"/>
+    <image id="n122_prod" name="era_selected_background" src="prod31" fileName="image/era_selected_background.png" xy="53,13" size="121,70"/>
+    <component id="n123_prod" name="era_button_0" src="prodt" fileName="Component/UIProductionEraButton.xml" xy="68,16" size="100,70" title="全部"/>
+    <component id="n124_prod" name="era_button_1" src="prodt" fileName="Component/UIProductionEraButton.xml" xy="195,16" size="100,70" title="石器"/>
+    <component id="n125_prod" name="era_button_2" src="prodt" fileName="Component/UIProductionEraButton.xml" xy="298,16" size="100,70" title="铁器"/>
+    <component id="n126_prod" name="era_button_3" src="prodt" fileName="Component/UIProductionEraButton.xml" xy="406,16" size="100,70" title="蒸汽"/>
+    <component id="n127_prod" name="era_button_4" src="prodt" fileName="Component/UIProductionEraButton.xml" xy="514,16" size="100,70" title="现代"/>
+    <component id="n128_prod" name="era_button_5" src="prodt" fileName="Component/UIProductionEraButton.xml" xy="622,16" size="100,70" title="未来"/>
+    <list id="n129_prod" name="product_list" xy="25,95" size="719,622" layout="flow_hz" overflow="scroll" colGap="5" lineGap="5" lineItemCount="4" defaultItem="ui://prod1001prods" autoClearItems="true"/>
+  </displayList>
+</component>

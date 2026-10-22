@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="58,60" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n92_prod" name="up" src="prod2b" fileName="image/closebutton.png" xy="0,0" size="57,59"/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue="1.05"/>
+</component>

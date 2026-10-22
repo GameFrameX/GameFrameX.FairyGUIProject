@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="252,42">
+  <displayList>
+    <component id="n48_prod" name="decrease_button" src="prodf" fileName="Component/UIProductionDecreaseButton.xml" xy="44,0" size="40,40"/>
+    <component id="n47_prod" name="increase_button" src="prode" fileName="Component/UIProductionIncreaseButton.xml" xy="170,0" size="40,40"/>
+    <image id="n39_prod" name="quantity_background" src="prod1m" fileName="image/quantity_background.png" xy="46,3" size="163,37"/>
+    <text id="n40_prod" name="value" xy="112,13" size="26,18" fontSize="14" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="60"/>
+    <component id="n41_prod" name="maximum_button" src="prodc" fileName="Component/UIProductionMaximumWorkersButton.xml" xy="212,0" size="40,40"/>
+    <component id="n42_prod" name="minimum_button" src="prodd" fileName="Component/UIProductionMinimumWorkersButton.xml" xy="0,2" size="40,40"/>
+  </displayList>
+</component>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="910,1028">
+  <displayList>
+    <image id="n93_prod" name="window_center_decoration" src="prod2c" fileName="image/window_center_decoration.png" xy="435,704" size="31,30"/>
+    <image id="n94_prod" name="window_outer_panel" src="prod2d" fileName="image/window_outer_panel.png" xy="1,30" size="899,997"/>
+    <image id="n95_prod" name="window_inner_panel" src="prod2e" fileName="image/window_inner_panel.png" xy="17,46" size="867,966"/>
+    <image id="n96_prod" name="window_top_highlight" src="prod2f" fileName="image/window_top_highlight.png" xy="43,36" size="31,7"/>
+    <image id="n97_prod" name="window_top_highlight_dot" src="prod2g" fileName="image/window_top_highlight_dot.png" xy="30,36" size="7,7"/>
+    <image id="n98_prod" name="window_bottom_highlight" src="prod2h" fileName="image/window_bottom_highlight.png" xy="831,1014" size="31,7"/>
+    <image id="n99_prod" name="window_bottom_highlight_dot" src="prod2i" fileName="image/window_bottom_highlight_dot.png" xy="867,1014" size="7,7"/>
+    <image id="n100_prod" name="title_small_star" src="prod2j" fileName="image/title_small_star.png" xy="25,53" size="17,18"/>
+    <image id="n101_prod" name="title_left_star" src="prod2k" fileName="image/title_left_star.png" xy="310,30" size="32,32"/>
+    <image id="n102_prod" name="title_right_star" src="prod2l" fileName="image/title_right_star.png" xy="568,30" size="32,32"/>
+    <image id="n103_prod" name="title_top_star" src="prod2m" fileName="image/title_top_star.png" xy="446,1" size="16,15"/>
+    <image id="n104_prod" name="title_bottom_star" src="prod2n" fileName="image/title_bottom_star.png" xy="446,75" size="16,16"/>
+    <component id="n105_prod" name="close_button" src="produ" fileName="Component/UIProductionCloseLineWindowButton.xml" xy="853,15" size="58,60"/>
+    <component id="n106_prod" name="title" src="prodp" fileName="Component/UIProductionCreateLineWindowTitle.xml" xy="341,6" size="228,80"/>
+    <image id="n107_prod" name="window_content_divider" src="prod2o" fileName="image/window_content_divider.png" xy="289,203" size="315,12"/>
+  </displayList>
+</component>

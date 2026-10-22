@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1034,334">
+  <displayList>
+    <image id="n68_prod" name="deco_cardpanel" src="prod22" fileName="image/deco_cardpanel.png" xy="0,46" size="1033,287"/>
+    <image id="n69_prod" name="deco_cardcornerdecoration" src="prod23" fileName="image/deco_cardcornerdecoration.png" xy="21,65" size="13,13"/>
+    <image id="n70_prod" name="deco_carddivider" src="prod24" fileName="image/deco_carddivider.png" xy="316,135" size="397,15"/>
+    <text id="n71_prod" name="production_line_name" xy="18,0" size="113,33" fontSize="26" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="生产线1"/>
+    <component id="n72_prod" name="product_label" src="prodi" fileName="Component/UIProductionProductionLineProductLabel.xml" xy="415,68" size="202,48"/>
+    <component id="n73_prod" name="edit_line_button" src="prodm" fileName="Component/UIProductionEditLineButton.xml" xy="905,67" size="40,40"/>
+    <component id="n74_prod" name="delete_line_button" src="prodn" fileName="Component/UIProductionDeleteLineButton.xml" xy="961,67" size="38,42"/>
+    <text id="n75_prod" name="output_label" xy="240,186" size="80,33" fontSize="26" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="产出："/>
+    <text id="n76_prod" name="output_rate" xy="505,188" size="123,32" fontSize="26" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="x0.5/天"/>
+    <text id="n77_prod" name="inventory_value" xy="649,186" size="249,35" fontSize="28" color="#6ad86a" align="center" vAlign="middle" autoSize="none" singleLine="true" text="(库存：1.6/100）"/>
+    <component id="n78_prod" name="output_product_label" src="prodj" fileName="Component/UIProductionOutputProductLabel.xml" xy="328,186" size="162,38"/>
+    <text id="n79_prod" name="worker_allocation_label" xy="244,264" size="125,28" fontSize="22" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="工人分配："/>
+    <component id="n80_prod" name="quantity" src="prodb" fileName="Component/UIProductionWorkerQuantityControl.xml" xy="244,259" size="396,40"/>
+  </displayList>
+</component>

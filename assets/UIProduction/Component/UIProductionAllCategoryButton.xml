@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="170,54" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n15_prod" name="all_category_border" src="prod17" fileName="image/all_category_border.png" xy="2,1" size="167,50"/>
+    <image id="n16_prod" name="up" src="prod18" fileName="image/all_category_background.png" xy="2,1" size="167,50"/>
+    <image id="n17_prod" name="all_category_decoration" src="prod19" fileName="image/all_category_decoration.png" xy="13,19" size="15,15"/>
+    <text id="n18_prod" name="title" xy="59,14" size="59,25" fontSize="20" color="#7df1ef" align="center" vAlign="middle" autoSize="none" singleLine="true" text="全 部"/>
+  </displayList>
+  <Button mode="Check" downEffect="scale" downEffectValue="1.05"/>
+</component>

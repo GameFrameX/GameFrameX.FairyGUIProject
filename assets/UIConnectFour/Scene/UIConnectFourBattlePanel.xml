@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="1920,1080">
+<component size="1080,2160">
   <displayList>
-    <graph id="n0_cf" name="mask" xy="0,0" size="1920,1080" alpha="0.58" type="rect" lineSize="0" fillColor="#ff000000">
+    <graph id="n0_cf" name="mask" xy="0,0" size="1080,2160" alpha="0.58" type="rect" lineSize="0" fillColor="#ff000000">
       <relation target="" sidePair="width-width,height-height"/>
     </graph>
-    <graph id="n1_cf" name="window_bg" xy="126,72" size="1668,936" type="rect" lineSize="2" lineColor="#ff3b485e" fillColor="#ff121720" corner="8">
+    <graph id="n1_cf" name="window_bg" xy="414,38" size="960,1060" type="rect" lineSize="2" lineColor="#ff3b485e" fillColor="#ff121720" corner="8">
       <relation target="" sidePair="center-center,middle-middle"/>
     </graph>
-    <graph id="n2_cf" name="top_bg" xy="166,104" size="1588,110" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1c2330" corner="8"/>
-    <text id="n3_cf" name="room_title_text" xy="198,122" size="560,42" fontSize="30" color="#ffffffff" vAlign="middle" autoSize="none" bold="true" singleLine="true" text="房间 #0"/>
-    <text id="n4_cf" name="room_state_text" xy="198,166" size="620,30" fontSize="21" color="#ffcbd6e6" vAlign="middle" autoSize="none" singleLine="true" text="等待中 0/2  局数:1  房主:0"/>
-    <text id="n5_cf" name="turn_text" xy="838,124" size="570,38" fontSize="22" color="#ff9bd8b2" align="right" vAlign="middle" autoSize="none" singleLine="true" text="等待开始"/>
-    <component id="n6_cf" name="leave_button" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="1496,132" size="96,52">
+    <graph id="n2_cf" name="top_bg" xy="100,132" size="880,110" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1c2330" corner="8"/>
+    <text id="n3_cf" name="room_title_text" xy="132,150" size="560,42" fontSize="30" color="#ffffff" vAlign="middle" autoSize="none" bold="true" singleLine="true" text="房间 #0"/>
+    <text id="n4_cf" name="room_state_text" xy="132,194" size="620,30" fontSize="21" color="#cbd6e6" vAlign="middle" autoSize="none" singleLine="true" text="等待中 0/2  局数:1  房主:0"/>
+    <text id="n5_cf" name="turn_text" xy="132,240" size="816,38" fontSize="22" color="#9bd8b2" align="right" vAlign="middle" autoSize="none" singleLine="true" text="等待开始"/>
+    <component id="n6_cf" name="leave_button" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="772,142" size="96,52">
       <Button title="退出"/>
     </component>
-    <component id="n7_cf" name="close_button" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="1608,132" size="96,52">
+    <component id="n7_cf" name="close_button" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="884,142" size="96,52">
       <Button title="关闭"/>
     </component>
-    <text id="n8_cf" name="result_text" xy="650,216" size="620,48" fontSize="34" color="#ffffffff" align="center" vAlign="middle" autoSize="none" bold="true" singleLine="true" text="等待开始"/>
-    <graph id="n9_cf" name="board_bg" xy="650,274" size="620,548" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff161c26" corner="8"/>
-    <graph id="c00_cf" name="cell_0" xy="672,314" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c01_cf" name="cell_1" xy="756,314" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c02_cf" name="cell_2" xy="840,314" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c03_cf" name="cell_3" xy="924,314" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c04_cf" name="cell_4" xy="1008,314" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c05_cf" name="cell_5" xy="1092,314" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c06_cf" name="cell_6" xy="1176,314" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c10_cf" name="cell_7" xy="672,398" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c11_cf" name="cell_8" xy="756,398" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c12_cf" name="cell_9" xy="840,398" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c13_cf" name="cell_10" xy="924,398" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c14_cf" name="cell_11" xy="1008,398" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c15_cf" name="cell_12" xy="1092,398" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c16_cf" name="cell_13" xy="1176,398" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c20_cf" name="cell_14" xy="672,482" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c21_cf" name="cell_15" xy="756,482" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c22_cf" name="cell_16" xy="840,482" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c23_cf" name="cell_17" xy="924,482" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c24_cf" name="cell_18" xy="1008,482" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c25_cf" name="cell_19" xy="1092,482" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c26_cf" name="cell_20" xy="1176,482" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c30_cf" name="cell_21" xy="672,566" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c31_cf" name="cell_22" xy="756,566" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c32_cf" name="cell_23" xy="840,566" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c33_cf" name="cell_24" xy="924,566" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c34_cf" name="cell_25" xy="1008,566" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c35_cf" name="cell_26" xy="1092,566" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c36_cf" name="cell_27" xy="1176,566" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c40_cf" name="cell_28" xy="672,650" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c41_cf" name="cell_29" xy="756,650" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c42_cf" name="cell_30" xy="840,650" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c43_cf" name="cell_31" xy="924,650" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c44_cf" name="cell_32" xy="1008,650" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c45_cf" name="cell_33" xy="1092,650" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c46_cf" name="cell_34" xy="1176,650" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c50_cf" name="cell_35" xy="672,734" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c51_cf" name="cell_36" xy="756,734" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c52_cf" name="cell_37" xy="840,734" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c53_cf" name="cell_38" xy="924,734" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c54_cf" name="cell_39" xy="1008,734" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c55_cf" name="cell_40" xy="1092,734" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <graph id="c56_cf" name="cell_41" xy="1176,734" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
-    <component id="col0_cf" name="column_button_0" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="670,834" size="80,52">
+    <text id="n8_cf" name="result_text" xy="230,290" size="620,48" fontSize="34" color="#ffffff" align="center" vAlign="middle" autoSize="none" bold="true" singleLine="true" text="等待开始"/>
+    <graph id="n9_cf" name="board_bg" xy="230,360" size="620,548" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff161c26" corner="8"/>
+    <graph id="c00_cf" name="cell_0" xy="252,400" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c01_cf" name="cell_1" xy="336,400" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c02_cf" name="cell_2" xy="420,400" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c03_cf" name="cell_3" xy="504,400" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c04_cf" name="cell_4" xy="588,400" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c05_cf" name="cell_5" xy="672,400" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c06_cf" name="cell_6" xy="756,400" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c10_cf" name="cell_7" xy="252,484" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c11_cf" name="cell_8" xy="336,484" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c12_cf" name="cell_9" xy="420,484" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c13_cf" name="cell_10" xy="504,484" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c14_cf" name="cell_11" xy="588,484" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c15_cf" name="cell_12" xy="672,484" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c16_cf" name="cell_13" xy="756,484" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c20_cf" name="cell_14" xy="252,568" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c21_cf" name="cell_15" xy="336,568" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c22_cf" name="cell_16" xy="420,568" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c23_cf" name="cell_17" xy="504,568" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c24_cf" name="cell_18" xy="588,568" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c25_cf" name="cell_19" xy="672,568" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c26_cf" name="cell_20" xy="756,568" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c30_cf" name="cell_21" xy="252,652" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c31_cf" name="cell_22" xy="336,652" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c32_cf" name="cell_23" xy="420,652" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c33_cf" name="cell_24" xy="504,652" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c34_cf" name="cell_25" xy="588,652" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c35_cf" name="cell_26" xy="672,652" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c36_cf" name="cell_27" xy="756,652" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c40_cf" name="cell_28" xy="252,736" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c41_cf" name="cell_29" xy="336,736" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c42_cf" name="cell_30" xy="420,736" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c43_cf" name="cell_31" xy="504,736" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c44_cf" name="cell_32" xy="588,736" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c45_cf" name="cell_33" xy="672,736" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c46_cf" name="cell_34" xy="756,736" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c50_cf" name="cell_35" xy="252,820" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c51_cf" name="cell_36" xy="336,820" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c52_cf" name="cell_37" xy="420,820" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c53_cf" name="cell_38" xy="504,820" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c54_cf" name="cell_39" xy="588,820" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c55_cf" name="cell_40" xy="672,820" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <graph id="c56_cf" name="cell_41" xy="756,820" size="76,76" type="rect" lineSize="2" lineColor="#ff334055" fillColor="#ff1d2a3f" corner="10"/>
+    <component id="col0_cf" name="column_button_0" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="250,920" size="80,52">
       <Button title="1"/>
     </component>
-    <component id="col1_cf" name="column_button_1" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="754,834" size="80,52">
+    <component id="col1_cf" name="column_button_1" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="334,920" size="80,52">
       <Button title="2"/>
     </component>
-    <component id="col2_cf" name="column_button_2" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="838,834" size="80,52">
+    <component id="col2_cf" name="column_button_2" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="418,920" size="80,52">
       <Button title="3"/>
     </component>
-    <component id="col3_cf" name="column_button_3" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="922,834" size="80,52">
+    <component id="col3_cf" name="column_button_3" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="502,920" size="80,52">
       <Button title="4"/>
     </component>
-    <component id="col4_cf" name="column_button_4" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="1006,834" size="80,52">
+    <component id="col4_cf" name="column_button_4" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="586,920" size="80,52">
       <Button title="5"/>
     </component>
-    <component id="col5_cf" name="column_button_5" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="1090,834" size="80,52">
+    <component id="col5_cf" name="column_button_5" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="670,920" size="80,52">
       <Button title="6"/>
     </component>
-    <component id="col6_cf" name="column_button_6" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="1174,834" size="80,52">
+    <component id="col6_cf" name="column_button_6" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="754,920" size="80,52">
       <Button title="7"/>
     </component>
-    <component id="n10_cf" name="start_button" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="790,906" size="160,56">
+    <component id="n10_cf" name="start_button" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="360,1010" size="160,56">
       <Button title="开始游戏"/>
     </component>
-    <component id="n11_cf" name="restart_button" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="970,906" size="160,56">
+    <component id="n11_cf" name="restart_button" src="btn001" fileName="Widget/UIConnectFourButton.xml" xy="560,1010" size="160,56">
       <Button title="再来一局"/>
     </component>
-    <text id="n12_cf" name="tips_text" xy="166,964" size="1588,34" fontSize="22" color="#ff8fd8b0" align="center" vAlign="middle" autoSize="none" singleLine="true" text="点击列号落子，四子连线即胜。"/>
+    <text id="n12_cf" name="tips_text" xy="100,1100" size="880,34" fontSize="22" color="#8fd8b0" align="center" vAlign="middle" autoSize="none" singleLine="true" text="点击列号落子，四子连线即胜。"/>
   </displayList>
 </component>

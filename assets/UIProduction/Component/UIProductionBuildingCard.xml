@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="326,272">
+  <displayList>
+    <image id="n55_prod" name="card_panel" src="prod1t" fileName="image/card_panel.png" xy="1,1" size="324,269"/>
+    
+    <image id="n56_prod" name="card_top_left_decoration" src="prod1u" fileName="image/card_top_left_decoration.png" xy="21,19" size="8,9"/>
+    <image id="n57_prod" name="card_top_divider" src="prod1v" fileName="image/card_top_divider.png" xy="75,39" size="175,7"/>
+    <image id="n58_prod" name="card_bottom_divider" src="prod1w" fileName="image/card_bottom_divider.png" xy="75,199" size="175,7"/>
+    <text id="n59_prod" name="title" xy="87,13" size="153,22" fontSize="18" color="#2661c5" align="center" vAlign="middle" autoSize="none" singleLine="true" text="伐木场 LV.256"/>
+    <component id="n60_prod" name="quantity" src="prodb" fileName="Component/UIProductionWorkerQuantityControl.xml" xy="37,216" size="252,42"/>
+    <loader id="n61_prod" name="building_image" xy="98,47" size="122,146" align="center" vAlign="middle" url="ui://prod1001prod1x"/>
+  </displayList>
+</component>

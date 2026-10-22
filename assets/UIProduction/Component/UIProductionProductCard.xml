@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="176,204">
+  <controller name="state" pages="0,普通,1,选中" selected="0"/>
+  <displayList>
+    <image id="n108_prod" name="product_card_shadow" src="prod2p" fileName="image/product_card_shadow.png" xy="6,6" size="169,197"/>
+    <image id="n109_prod" name="product_card_background" src="prod2q" fileName="image/product_card_background.png" xy="1,1" size="170,198"/>
+    <image id="n110_prod" name="product_card_highlight" src="prod2r" fileName="image/product_card_highlight.png" xy="-160,-110" size="572,287"><gearDisplay controller="state" pages="1"/></image>
+    <image id="n111_prod" name="product_upper_gradient" src="prod2s" fileName="image/product_upper_gradient.png" xy="-2,33" size="175,139"><gearDisplay controller="state" pages="1"/></image>
+    <image id="n112_prod" name="product_lower_gradient" src="prod2t" fileName="image/product_lower_gradient.png" xy="-2,112" size="175,140"><gearDisplay controller="state" pages="1"/></image>
+    <image id="n113_prod" name="product_caption_background" src="prod2u" fileName="image/product_caption_background.png" xy="-7,158" size="185,47"><gearDisplay controller="state" pages="1"/></image>
+    <text id="n114_prod" name="title" xy="33,168" size="105,26" fontSize="21" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="坦克组件"/>
+    <loader id="n115_prod" name="product_image" xy="28,8" size="115,137" align="center" vAlign="middle" url="ui://prod1001prod2v"/>
+  </displayList>
+</component>

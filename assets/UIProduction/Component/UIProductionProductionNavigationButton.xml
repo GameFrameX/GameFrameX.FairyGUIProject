@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="270,104" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n5_prod" name="up" src="prod13" fileName="image/production_background.png" xy="0,0" size="270,103"/>
+    <text id="n6_prod" name="production_title_shadow" xy="89,29" size="99,47" fontSize="38" color="#a05823" align="center" vAlign="middle" autoSize="none" singleLine="true" text="生产"/>
+    <text id="n7_prod" name="title" xy="84,25" size="99,47" fontSize="38" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="生产"/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue="1.05"/>
+</component>

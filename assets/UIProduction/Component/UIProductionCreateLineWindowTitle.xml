@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="228,80">
+  <displayList>
+    <image id="n90_prod" name="window_title_background" src="prod2a" fileName="image/window_title_background.png" xy="0,0" size="228,79"/>
+    <text id="n91_prod" name="title" xy="54,25" size="125,30" fontSize="24" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="建立产线"/>
+  </displayList>
+</component>

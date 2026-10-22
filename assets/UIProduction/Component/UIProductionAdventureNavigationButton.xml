@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="270,104" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n8_prod" name="up" src="prod14" fileName="image/adventure_background.png" xy="0,0" size="270,103"/>
+    <text id="n9_prod" name="adventure_title_shadow" xy="90,29" size="101,48" fontSize="38" color="#233aa0" align="center" vAlign="middle" autoSize="none" singleLine="true" text="探险"/>
+    <text id="n10_prod" name="title" xy="85,25" size="102,48" fontSize="38" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="探险"/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue="1.05"/>
+</component>

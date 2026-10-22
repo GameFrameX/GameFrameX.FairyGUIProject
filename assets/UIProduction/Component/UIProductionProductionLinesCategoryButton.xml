@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="170,52" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n19_prod" name="production_lines_category_border" src="prod1a" fileName="image/production_lines_category_border.png" xy="2,1" size="167,50"/>
+    <image id="n20_prod" name="up" src="prod1b" fileName="image/production_lines_category_background.png" xy="2,1" size="167,50"/>
+    <image id="n21_prod" name="production_lines_category_decoration" src="prod1c" fileName="image/production_lines_category_decoration.png" xy="13,19" size="15,15"/>
+    <text id="n22_prod" name="title" xy="59,14" size="61,25" fontSize="20" color="#2661c5" align="center" vAlign="middle" autoSize="none" singleLine="true" text="产 线"/>
+  </displayList>
+  <Button mode="Check" downEffect="scale" downEffectValue="1.05"/>
+</component>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="prod1001">
+  <resources>
+    <component id="prod1" name="UIProduction.xml" path="/" exported="true"/>
+    <component id="prod3" name="UIProductionProductionTabButton.xml" path="/Component/" exported="true"/>
+    <component id="prod4" name="UIProductionProductionLinesTabButton.xml" path="/Component/" exported="true"/>
+    <component id="prod5" name="UIProductionProductionNavigationButton.xml" path="/Component/" exported="true"/>
+    <component id="prod6" name="UIProductionAdventureNavigationButton.xml" path="/Component/" exported="true"/>
+    <component id="prod7" name="UIProductionTrainingNavigationButton.xml" path="/Component/" exported="true"/>
+    <component id="prod8" name="UIProductionBackButton.xml" path="/Component/" exported="true"/>
+    <component id="prodv" name="UIProductionAllCategoryButton.xml" path="/Component/" exported="true"/>
+    <component id="prodw" name="UIProductionProductionLinesCategoryButton.xml" path="/Component/" exported="true"/>
+    <component id="prodx" name="UIProductionProductionLeftCategoryButton.xml" path="/Component/" exported="true"/>
+    <component id="prody" name="UIProductionProductionCenterLeftCategoryButton.xml" path="/Component/" exported="true"/>
+    <component id="prodz" name="UIProductionProductionCenterRightCategoryButton.xml" path="/Component/" exported="true"/>
+    <component id="prod10" name="UIProductionProductionRightCategoryButton.xml" path="/Component/" exported="true"/>
+    <component id="prode" name="UIProductionIncreaseButton.xml" path="/Component/" exported="true"/>
+    <component id="prodf" name="UIProductionDecreaseButton.xml" path="/Component/" exported="true"/>
+    <component id="prodb" name="UIProductionWorkerQuantityControl.xml" path="/Component/" exported="true"/>
+    <component id="prodc" name="UIProductionMaximumWorkersButton.xml" path="/Component/" exported="true"/>
+    <component id="prodd" name="UIProductionMinimumWorkersButton.xml" path="/Component/" exported="true"/>
+    <component id="proda" name="UIProductionBuildingCard.xml" path="/Component/" exported="true"/>
+    <component id="prodi" name="UIProductionProductionLineProductLabel.xml" path="/Component/" exported="true"/>
+    <component id="prodj" name="UIProductionOutputProductLabel.xml" path="/Component/" exported="true"/>
+    <component id="prodm" name="UIProductionEditLineButton.xml" path="/Component/" exported="true"/>
+    <component id="prodn" name="UIProductionDeleteLineButton.xml" path="/Component/" exported="true"/>
+    <component id="prodh" name="UIProductionProductionLineCard.xml" path="/Component/" exported="true"/>
+    <component id="prodl" name="UIProductionCreateLineButton.xml" path="/Component/" exported="true"/>
+    <component id="prodk" name="UIProductionEmptyProductionLineCard.xml" path="/Component/" exported="true"/>
+    <component id="prodp" name="UIProductionCreateLineWindowTitle.xml" path="/Component/" exported="true"/>
+    <component id="produ" name="UIProductionCloseLineWindowButton.xml" path="/Component/" exported="true"/>
+    <component id="prodo" name="UIProductionCreateLineWindowFrame.xml" path="/Component/" exported="true"/>
+    <component id="prods" name="UIProductionProductCard.xml" path="/Component/" exported="true"/>
+    <component id="prodt" name="UIProductionEraButton.xml" path="/Component/" exported="true"/>
+    <component id="prodr" name="UIProductionProductCatalog.xml" path="/Component/" exported="true"/>
+    <component id="prodq" name="UIProductionCreateLineContent.xml" path="/Component/" exported="true"/>
+    <component id="prodg" name="UIProductionProductionLinesPanel.xml" path="/Component/" exported="true"/>
+    <component id="prod9" name="UIProductionBuildingsPanel.xml" path="/Component/" exported="true"/>
+    <component id="prod2" name="UIProductionScreenChrome.xml" path="/Component/" exported="true"/>
+    <image id="prod14" name="adventure_background.png" path="/image/"/>
+    <image id="prod18" name="all_category_background.png" path="/image/"/>
+    <image id="prod17" name="all_category_border.png" path="/image/"/>
+    <image id="prod19" name="all_category_decoration.png" path="/image/"/>
+    <image id="prod38" name="available_workers_background.png" path="/image/"/>
+    <image id="prod16" name="back_button.png" path="/image/"/>
+    <image id="prod1x" name="building_image.png" path="/image/"/>
+    <image id="prod1w" name="card_bottom_divider.png" path="/image/"/>
+    <image id="prod1t" name="card_panel.png" path="/image/"/>
+    <image id="prod1v" name="card_top_divider.png" path="/image/"/>
+    <image id="prod1u" name="card_top_left_decoration.png" path="/image/"/>
+    <image id="prod2y" name="catalog_body_background.png" path="/image/"/>
+    <image id="prod2x" name="catalog_header_background.png" path="/image/"/>
+    <image id="prod30" name="catalog_left_corner_decoration.png" path="/image/"/>
+    <image id="prod2w" name="catalog_outer_panel.png" path="/image/"/>
+    <image id="prod2z" name="catalog_right_corner_decoration.png" path="/image/"/>
+    <image id="prod2b" name="closebutton.png" path="/image/"/>
+    <image id="prod37" name="deco_availableworkersbackground.png" path="/image/"/>
+    <image id="prod23" name="deco_cardcornerdecoration.png" path="/image/"/>
+    <image id="prod27" name="deco_cardcornerdecoration2.png" path="/image/"/>
+    <image id="prod24" name="deco_carddivider.png" path="/image/"/>
+    <image id="prod22" name="deco_cardpanel.png" path="/image/"/>
+    <image id="prod26" name="deco_cardpanel2.png" path="/image/"/>
+    <image id="prod25" name="deco_createlinebutton.png" path="/image/"/>
+    <image id="prod21" name="deco_deletelinebutton.png" path="/image/"/>
+    <image id="prod29" name="deco_deletelinebutton3.png" path="/image/"/>
+    <image id="prod34" name="deco_descriptionbodybackground.png" path="/image/"/>
+    <image id="prod33" name="deco_descriptionheaderbackground.png" path="/image/"/>
+    <image id="prod36" name="deco_descriptionleftcornerdecoration.png" path="/image/"/>
+    <image id="prod32" name="deco_descriptionouterpanel.png" path="/image/"/>
+    <image id="prod35" name="deco_descriptionrightcornerdecoration.png" path="/image/"/>
+    <image id="prod20" name="deco_editlinebutton.png" path="/image/"/>
+    <image id="prod28" name="deco_editlinebutton3.png" path="/image/"/>
+    <image id="prod1z" name="deco_outputproductbackground.png" path="/image/"/>
+    <image id="prod1y" name="deco_productlabelbackground.png" path="/image/"/>
+    <image id="prod1p" name="decrease_background.png" path="/image/"/>
+    <image id="prod1q" name="decrease_symbol.png" path="/image/"/>
+    <image id="prod31" name="era_selected_background.png" path="/image/"/>
+    <image id="prod1n" name="increase_background.png" path="/image/"/>
+    <image id="prod1o" name="increase_symbol.png" path="/image/"/>
+    <image id="prod1r" name="maximum_background.png" path="/image/"/>
+    <image id="prod1s" name="minimum_background.png" path="/image/"/>
+    <image id="prod2u" name="product_caption_background.png" path="/image/"/>
+    <image id="prod2q" name="product_card_background.png" path="/image/"/>
+    <image id="prod2r" name="product_card_highlight.png" path="/image/"/>
+    <image id="prod2p" name="product_card_shadow.png" path="/image/"/>
+    <image id="prod2v" name="product_image.png" path="/image/"/>
+    <image id="prod2t" name="product_lower_gradient.png" path="/image/"/>
+    <image id="prod2s" name="product_upper_gradient.png" path="/image/"/>
+    <image id="prod13" name="production_background.png" path="/image/"/>
+    <image id="prod1h" name="production_center_left_category_background.png" path="/image/"/>
+    <image id="prod1g" name="production_center_left_category_border.png" path="/image/"/>
+    <image id="prod1i" name="production_center_left_category_decoration.png" path="/image/"/>
+    <image id="prod1e" name="production_left_category_background.png" path="/image/"/>
+    <image id="prod1d" name="production_left_category_border.png" path="/image/"/>
+    <image id="prod1f" name="production_left_category_decoration.png" path="/image/"/>
+    <image id="prod1b" name="production_lines_category_background.png" path="/image/"/>
+    <image id="prod1a" name="production_lines_category_border.png" path="/image/"/>
+    <image id="prod1c" name="production_lines_category_decoration.png" path="/image/"/>
+    <image id="prod12" name="production_lines_tab_background.png" path="/image/"/>
+    <image id="prod1k" name="production_right_category_background.png" path="/image/"/>
+    <image id="prod1j" name="production_right_category_border.png" path="/image/"/>
+    <image id="prod1l" name="production_right_category_decoration.png" path="/image/"/>
+    <image id="prod11" name="production_tab_background.png" path="/image/"/>
+    <image id="prod1m" name="quantity_background.png" path="/image/"/>
+    <image id="prod39" name="screen_background_p0.png" path="/image/"/>
+    <image id="prod3a" name="screen_background_p1.png" path="/image/"/>
+    <image id="prod2n" name="title_bottom_star.png" path="/image/"/>
+    <image id="prod2k" name="title_left_star.png" path="/image/"/>
+    <image id="prod2l" name="title_right_star.png" path="/image/"/>
+    <image id="prod2j" name="title_small_star.png" path="/image/"/>
+    <image id="prod2m" name="title_top_star.png" path="/image/"/>
+    <image id="prod15" name="training_background.png" path="/image/"/>
+    <image id="prod2h" name="window_bottom_highlight.png" path="/image/"/>
+    <image id="prod2i" name="window_bottom_highlight_dot.png" path="/image/"/>
+    <image id="prod2c" name="window_center_decoration.png" path="/image/"/>
+    <image id="prod2o" name="window_content_divider.png" path="/image/"/>
+    <image id="prod2e" name="window_inner_panel.png" path="/image/"/>
+    <image id="prod2d" name="window_outer_panel.png" path="/image/"/>
+    <image id="prod2a" name="window_title_background.png" path="/image/"/>
+    <image id="prod2f" name="window_top_highlight.png" path="/image/"/>
+    <image id="prod2g" name="window_top_highlight_dot.png" path="/image/"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

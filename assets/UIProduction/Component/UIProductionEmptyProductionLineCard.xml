@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1036,336">
+  <displayList>
+    <image id="n82_prod" name="deco_cardpanel2" src="prod26" fileName="image/deco_cardpanel2.png" xy="1,47" size="1033,287"/>
+    <image id="n83_prod" name="deco_cardcornerdecoration2" src="prod27" fileName="image/deco_cardcornerdecoration2.png" xy="22,66" size="13,13"/>
+    <text id="n84_prod" name="production_line_name" xy="16,0" size="122,33" fontSize="26" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="生产线3"/>
+    <image id="n85_prod" name="deco_editlinebutton3" src="prod28" fileName="image/deco_editlinebutton3.png" xy="906,68" size="40,40"/>
+    <image id="n86_prod" name="deco_deletelinebutton3" src="prod29" fileName="image/deco_deletelinebutton3.png" xy="962,68" size="37,41"/>
+    <text id="n87_prod" name="create_line_hint" xy="388,257" size="258,36" fontSize="29" color="#6f99cc" align="center" vAlign="middle" autoSize="none" singleLine="true" text="点击新建生产线"/>
+    <component id="n88_prod" name="create_line_button" src="prodl" fileName="Component/UIProductionCreateLineButton.xml" xy="475,135" size="84,86"/>
+    <text id="n89_prod" name="create_line_hint" xy="388,257" size="258,36" fontSize="29" color="#6f99cc" align="center" vAlign="middle" autoSize="none" singleLine="true" text="点击新建生产线"/>
+  </displayList>
+</component>

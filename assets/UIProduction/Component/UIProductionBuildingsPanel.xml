@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1036,1544">
+  <displayList>
+    <image id="n144_prod" name="description_outer_panel" src="prod32" fileName="image/deco_descriptionouterpanel.png" xy="2,1" size="1033,175"/>
+    <image id="n145_prod" name="description_header_background" src="prod33" fileName="image/deco_descriptionheaderbackground.png" xy="17,16" size="1003,49"/>
+    <image id="n146_prod" name="description_body_background" src="prod34" fileName="image/deco_descriptionbodybackground.png" xy="13,12" size="1011,153"/>
+    <image id="n147_prod" name="description_right_corner_decoration" src="prod35" fileName="image/deco_descriptionrightcornerdecoration.png" xy="988,24" size="25,25"/>
+    <image id="n148_prod" name="description_left_corner_decoration" src="prod36" fileName="image/deco_descriptionleftcornerdecoration.png" xy="19,24" size="25,25"/>
+    <text id="n149_prod" name="description_heading" xy="479,24" size="80,32" fontSize="26" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="描 述"/>
+    <text id="n150_prod" name="description_body" xy="30,77" size="957,65" fontSize="52" color="#dae8ff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="配置生产线最终产出目标,可以自动配置生产所需工人和中间产物生产组&#13;合，可以手动修改工厂流水线配置"/>
+    <image id="n151_prod" name="available_workers_background" src="prod38" fileName="image/available_workers_background.png" xy="4,198" size="547,57"/>
+    <text id="n152_prod" name="available_workers" xy="32,214" size="284,27" fontSize="22" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="可分配工人：100/200"/>
+    <component id="n153_prod" name="all_category_button" src="prodv" fileName="Component/UIProductionAllCategoryButton.xml" xy="12,296" size="170,54"/>
+    <component id="n154_prod" name="left_category_button" src="prodx" fileName="Component/UIProductionProductionLeftCategoryButton.xml" xy="353,296" size="170,52"/>
+    <component id="n155_prod" name="center_left_category_button" src="prody" fileName="Component/UIProductionProductionCenterLeftCategoryButton.xml" xy="524,296" size="170,52"/>
+    <component id="n156_prod" name="center_right_category_button" src="prodz" fileName="Component/UIProductionProductionCenterRightCategoryButton.xml" xy="694,296" size="170,52"/>
+    <component id="n157_prod" name="right_category_button" src="prod10" fileName="Component/UIProductionProductionRightCategoryButton.xml" xy="864,296" size="172,54"/>
+    <component id="n158_prod" name="production_lines_category_button" src="prodw" fileName="Component/UIProductionProductionLinesCategoryButton.xml" xy="182,296" size="170,52"/>
+    <list id="n159_prod" name="building_list" xy="358,375" size="1010,868" layout="flow_hz" overflow="scroll" colGap="16" lineGap="26" lineItemCount="3" defaultItem="ui://prod1001proda" autoClearItems="true"/>
+  </displayList>
+</component>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="162,38">
+  <displayList>
+    <image id="n64_prod" name="deco_outputproductbackground" src="prod1z" fileName="image/deco_outputproductbackground.png" xy="0,0" size="161,37"/>
+    <text id="n65_prod" name="title" xy="15,8" size="130,21" fontSize="17" color="#2b3fd1" align="center" vAlign="middle" autoSize="none" singleLine="true" text="现代建筑组件"/>
+  </displayList>
+</component>
