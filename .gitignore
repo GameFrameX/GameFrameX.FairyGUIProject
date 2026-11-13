@@ -1,1 +1,8 @@
 .agent
+
+# >>> magpie: library skills placed here (magpie adds and removes these lines) >>>
+/.mcp.json
+# <<< magpie <<<
+
+# FairyGUI 编辑器本地对象缓存
+/.objs/
